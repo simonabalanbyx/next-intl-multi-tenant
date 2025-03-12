@@ -6,6 +6,8 @@ export default getRequestConfig(async ({ requestLocale }) => {
   // This typically corresponds to the `[locale]` segment
   let locale = await requestLocale;
   const domainData = await getDomainData();
+  
+  console.log('getRequestConfig', locale, domainData);
 
   if (domainData) {
     if (!locale || !domainData.locales.includes(locale as Locale)) {
